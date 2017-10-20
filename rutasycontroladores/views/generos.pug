@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Listado géneros
+
+  table.table
+    thead
+      tr
+        th  id
+        th  nombre
+        th  id
+        th
+    tbody
+      each genero, i in generos
+        tr
+          each campo, ind in genero
+            td= campo
+          td
+            a(href='generos/' + genero._id, class="btn btn-primary") Ver
+
+  a(href="/genero/add" class="btn btn-default") Crear género
