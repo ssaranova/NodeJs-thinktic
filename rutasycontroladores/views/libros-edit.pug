@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Editando libro #{libro.titulo}
+
+  a(href="/libros/" + libro.id class="btn btn-default") Volver atrás
+  br
+  br
+  // register form
+  form(method='POST' action='/libros/edit/' + libro._id)
+    div.form-group
+      label(for='isbn') ISBN:
+      input#isbn.form-control(type='text', placeholder='isbn' name='isbn' value=libro.isbn)
+    div.form-group
+      label(for='titulo') Titulo:
+      input#titulo.form-control(type='text', placeholder='titulo' name='titulo' value=libro.titulo)
+    div.form-group
+        label(for='autores') Autores:
+        input#autores.form-control(type='text', placeholder='autores' name='autores' value=libro.autores)
+    div.form-group
+      label(for='sinopsis') Sinopsis:
+      input#sinopsis.form-control(type='text', placeholder='sinopsis' name='sinopsis' value=libro.sinopsis)
+    button.btn.btn-primary(type='submit') Editar libro

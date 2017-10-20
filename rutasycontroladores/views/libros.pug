@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  p Listado libros
+
+  table.table
+    thead
+      tr
+        th  id
+        th  isbn
+        th  titulo
+        th  autores
+        th  sinopsis
+        th
+    tbody
+      each libro, i in libros
+        tr
+          each campo, ind in libro
+            td= campo
+          td
+            a(href='libros/' + libro._id, class="btn btn-primary") Ver
+
+  a(href="/libros/add" class="btn btn-default") Crear libro

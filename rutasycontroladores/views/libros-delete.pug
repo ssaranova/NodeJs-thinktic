@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 Eliminando libro #{libro.titulo}
+
+  form(method='POST' action='/libros/delete/' + libro._id)
+    button.btn.btn-primary(type='submit' class="btn btn-warning") Eliminar libro
+
+  a(href="/libros/" + libro._id class="btn btn-default") Me rajo y no quiero borrarlo
